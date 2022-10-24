@@ -13,12 +13,12 @@ protocol {{ module_info.name }}ViewControllerProtocol: AnyObject {
 
 }
 
-class {{ module_info.name }}ViewController: BaseViewController, {{ module_info.name }}ViewControllerProtocol {
+class {{ module_info.name }}ViewController: BaseViewController {
     
     var presenter: {{ module_info.name }}PresenterProtocol?
     
     override func viewDidLoad() {
-        view.backgroundColor = .systemBackground
+        super.viewDidLoad()
         
         setupSubviews()
         setupConstraints()
@@ -34,6 +34,6 @@ class {{ module_info.name }}ViewController: BaseViewController, {{ module_info.n
     
 }
 
-extension {{ module_info.name }}ViewController {
+extension {{ module_info.name }}ViewController: {{ module_info.name }}ViewControllerProtocol {
    
 }
